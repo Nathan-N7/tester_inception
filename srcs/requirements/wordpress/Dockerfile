@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y \
     php8.2-gd \
     wget \
     curl \
+    netcat-openbsd \
     && rm -rf /var/lib/apt/lists/*
 
-# Baixa o wp-cli — ferramenta de linha de comando do WordPress
 RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x /usr/local/bin/wp
 

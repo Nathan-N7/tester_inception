@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+mkdir -p /run/mysqld
+chown -R mysql:mysql /run/mysqld
 DB_PASSWORD=$(cat /run/secrets/db_password)
 DB_ROOT_PASSWORD=$(cat /run/secrets/db_root_password)
 
@@ -17,4 +19,4 @@ FLUSH PRIVILEGES;
 EOF
 fi
 
-exec mysqld --user=mysql
+exec mysqld --user=mysql --bind-address=0.0.0.0
