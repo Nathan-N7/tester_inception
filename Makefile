@@ -1,8 +1,8 @@
 COMPOSE = docker compose -f srcs/docker-compose.yml
 
 all:
-	mkdir -p /home/natrodri/data/db
-	mkdir -p /home/natrodri/data/wordpress
+	mkdir -p /home/$(USER)/data/db
+	mkdir -p /home/$(USER)/data/wordpress
 	$(COMPOSE) up -d --build
 
 down:

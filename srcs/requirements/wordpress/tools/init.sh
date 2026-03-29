@@ -16,7 +16,7 @@ echo "MariaDB pronto!"
 
 # 2. Só instala se wp-config ainda não existe
 if [ ! -f "$WP_PATH/wp-config.php" ]; then
-    wp core download --path="$WP_PATH" --allow-root
+    wp core download --path="$WP_PATH" --allow-root --force
 
     wp config create \
         --path="$WP_PATH" \
